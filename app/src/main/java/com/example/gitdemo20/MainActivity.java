@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int number = 0;
-    private Button mButtonAdd;
+    private Button mButtonAdd,mButtonSub;
     private TextView mTextView;
 
     @Override
@@ -18,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mButtonAdd = findViewById(R.id.buttonAdd);
         mTextView = findViewById(R.id.textView);
+        mButtonSub =findViewById(R.id.buttonSub);
         //给textView赋初值
         mTextView.setText(String.valueOf(number));
         //编写buttonAdd点击事件实现+1功能
         mButtonAdd.setOnClickListener(v -> { mTextView.setText(String.valueOf(++number)); });
+        mButtonSub.setOnClickListener(v -> { mTextView.setText(String.valueOf(--number)); });
     }
 }
